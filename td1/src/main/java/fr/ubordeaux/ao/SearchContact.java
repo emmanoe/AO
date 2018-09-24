@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class SearchContact {
 	
-	private Contacts contacts;
+	private ContactSet contacts;
 	private Set<Contact> contactCol;
 	
 	public Set<Contact> search(String fname, String lname){
@@ -20,7 +20,7 @@ public class SearchContact {
 	
 	
 	
-	public SearchContact(Contacts contacts) {
+	public SearchContact(ContactSet contacts) {
 		this.contacts = contacts;
 		this.contactCol = this.contacts.getContacts(0, this.contacts.size());
 	}
