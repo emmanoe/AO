@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+21 sept. 2018
+
+compilation du td3
+
+utilisation: 
+"$ant svg" pour compiler
+"$ant" pour compiler et lancer le programme
+
+Le résultat se trouve dans out.xml                  
+
+Lionel                                                                
+====================================================================== -->
+<project name="td3" default="default" basedir=".">
+  <property name="svg.bin.dir" location="bin" />
+  <property name="svg.src.dir" location="src/main/java" />
+  <property name="svg.output.dir" location="output" />
+  <property name="svg.lib.dir" location="lib" />
+
+  <!-- ================================= 
+       target: default              
+       ================================= -->
+  <target name="default" depends="svg" description="lancer le programme">
+    <java classname="fr.ubordeaux.ao.Main" output="out.xml">
+      <classpath>
+	<fileset dir="${svg.lib.dir}">
+	  <include name="jdom-2.0.6.jar" />
+	</fileset>
+      </classpath>
+      <classpath>
+	<pathelement location="${svg.bin.dir}" />
+	<pathelement location="${svg.lib.dir}" />
+      </classpath>
+    </java>
+  </target>
+
+  <!-- ================================= 
+       target: svg              
+       ================================= -->
+  <target name="svg" depends="" description="compilation des sources">
+    <mkdir dir="${svg.bin.dir}" />
+
+    <javac srcdir="${svg.src.dir}" destdir="${svg.bin.dir}" classpath="${svg.lib.dir}" includeantruntime="false" debug="off">
+      <classpath>
+	<fileset dir="${svg.lib.dir}">
+	  <include name="jdom-2.0.6.jar" />
+	</fileset>
+      </classpath>
+    </javac>
+
+  </target>
+
+
+</project>
