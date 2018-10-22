@@ -5,7 +5,9 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
 
-apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'fr.ubordeaux.ao.Main'
 
 group = 'fr.ubordeaux.ao'
 version = '1.0-SNAPSHOT'

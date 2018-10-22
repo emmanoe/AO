@@ -75,8 +75,8 @@ public class Contact {
     public boolean equals(Object other) {
         if (! (other instanceof Contact)) return false;
         Contact otherContact = (Contact) other;
-        return  this.fname == otherContact.getFirstName() && this.lname == otherContact.getSecondName();
-    } //il ne connait pas fname et lname
+        return  this.firstName == otherContact.getFirstName() && this.secondName == otherContact.getSecondName();
+    }
 
     @Override
     public int hashCode() {
