@@ -11,7 +11,7 @@ public class TestContacts {
     @Test
     public void testContacts() {
 
-        Contacts contacts = new Contacts();
+        ContactSet contacts = new ContactSet();
 
         for (int i = 0 ; i < MAX ; i++) {
             Town talence = new Town("Talence", 33405);

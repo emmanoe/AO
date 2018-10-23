@@ -75,6 +75,7 @@ public class Contact {
     public boolean equals(Object other) {
         if (! (other instanceof Contact)) return false;
         Contact otherContact = (Contact) other;
+        System.out.println("this.firstName" + this.firstName + otherContact.getFirstName() );
         return  this.firstName == otherContact.getFirstName() && this.secondName == otherContact.getSecondName();
     }
 

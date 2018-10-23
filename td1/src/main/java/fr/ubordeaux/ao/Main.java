@@ -1,7 +1,10 @@
 package fr.ubordeaux.ao;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Scanner;
 
 public class Main {
-    private static  final int MAX = 100_000_000;
+    private static  final int MAX = 3000;
     public static void main(String[] args) {
         ContactSet contactSet = new ContactSet();
         Town talence = new Town("Talence", 33405);
@@ -12,6 +15,18 @@ public class Main {
             contactSet.addContact(newContact);
         }
         System.out.println(MAX+" contacts created !");
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Veuillez entrer un le nom de famille:");
+        String fname = sc.nextLine();
+        System.out.println("Veuillez entrer un le prénom:");
+        String lname = sc.nextLine();
+        System.out.println("fname: " + fname + " lname: " + lname);
+
+        SearchContact myResult = new SearchContact(contactSet);
+        System.out.println("Prog out: " + myResult.search(fname, lname));
+
+
 
         try {
             Thread.sleep(200000);
