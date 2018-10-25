@@ -8,9 +8,9 @@ public class Main {
     public static void main(String[] args) {
         ContactSet contactSet = new ContactSet();
         Town talence = new Town("Talence", 33405);
+        Address address = new Address(351, "Cours de la libération", talence);
 
         for (int i = 0 ; i < MAX ; i++) {
-            Address address = new Address(351, "Cours de la libération", talence);
             Contact newContact = new Contact("John", "Do", address);
             contactSet.addContact(newContact);
         }
@@ -21,11 +21,14 @@ public class Main {
         String fname = sc.nextLine();
         System.out.println("Veuillez entrer un le prénom:");
         String lname = sc.nextLine();
-        System.out.println("fname: " + fname + " lname: " + lname);
 
         SearchContact myResult = new SearchContact(contactSet);
-        System.out.println("Prog out: " + myResult.search(fname, lname));
-
+        Set<Contact> found = myResult.search(fname, lname);
+        System.out.println("Contact found wich match the most for : "+ fname + " " + lname + ":");
+        for (Contact c: found){
+            System.out.println(c.getFirstName() + " " + c.getSecondName() + " " + c.getAddress());
+        }
+        System.out.println("Bye");
 
 
         try {
