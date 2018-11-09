@@ -5,10 +5,8 @@ public class Circle extends Shape{
 
 
 public Circle(double radius, int centerX, int centerY) {
-	super(centerX,centerY);
+	super(centerX,centerY,"Circle");
 	this.radius = radius;
-	this.XMLelement.setname("Circle");
-	
 }
 
 @Override

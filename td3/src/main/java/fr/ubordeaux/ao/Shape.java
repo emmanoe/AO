@@ -8,9 +8,9 @@ public abstract class Shape {
 	abstract double area();
 	abstract double perimeter();
 	
-	public Shape(int x, int y) {
+	public Shape(int x, int y, Element element) {
 		this.x = x;
 		this.y = y;
-		this.XMLelement = new Element("Forme");
+		this.XMLelement = new Element(element);
 	}
 }

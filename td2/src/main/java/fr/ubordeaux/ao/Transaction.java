@@ -6,8 +6,8 @@ public class Transaction {
     private int amount;
 
     public Transaction(String title, int amount) {
-        //Affecter la date à aujourd'hui
         this.title = title;
+        //Affecter la date à aujourd'hui
         this.date = new java.util.Date();
         if (amount == 0) throw new IllegalArgumentException("Amount transaction must be greater than 0$" );
         else

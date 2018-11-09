@@ -13,6 +13,8 @@ public class Account {
     public Account(String id, String name) {
         this.balance = 0;
         transactions = new HashSet<Transaction>();
+        this.name = name;
+        this.id = UUID.randomUUID().toString();
     }
 
     public double getBalance() {
