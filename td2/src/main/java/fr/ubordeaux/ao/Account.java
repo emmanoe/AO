@@ -40,7 +40,7 @@ public class Account {
     	Set<Transaction> valueSet = new HashSet<Transaction>();
     	for (Transaction t : this.transactions) {
     		if (t.getDate().compareTo(date) >= 0 ) {
-    			valueSet.add(t);
+    			valueSet.add(new Transaction (t.getTitle(), t.getAmount()));
     		}
     	}
     	return valueSet;
